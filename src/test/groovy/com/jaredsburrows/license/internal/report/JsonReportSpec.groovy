@@ -39,17 +39,11 @@ final class JsonReportSpec extends Specification {
 [
     {
         "project": "name",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "name",
         "license_url": "url"
     },
     {
         "project": "name",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "name",
         "license_url": "url"
     }

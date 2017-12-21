@@ -9,28 +9,26 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.artifacts.Configuration
 import org.gradle.api.logging.LogLevel
 import org.gradle.api.tasks.*
-import org.gradle.maven.MavenModule
-import org.gradle.maven.MavenPomArtifact
 
 /**
  * @author <a href="mailto:jaredsburrows@gmail.com">Jared Burrows</a>
  */
-class LicenseReportTask extends DefaultTask {
-  final static POM_CONFIGURATION = "poms"
-  final static TEMP_POM_CONFIGURATION = "tempPoms"
-  final static ANDROID_SUPPORT_GROUP_ID = "com.android.support"
-  final static APACHE_LICENSE_NAME = "The Apache Software License"
-  final static APACHE_LICENSE_URL = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-  final static OPEN_SOURCE_LICENSES = "open_source_licenses"
-  final static HTML_EXT = ".html"
-  final static JSON_EXT = ".json"
-  @Internal final List<Project> projects = []
-  @Optional @Input File[] assetDirs = []
-  @Optional @Input buildType
-  @Optional @Input variant
-  @Optional @Internal productFlavors = []
-  @OutputFile File htmlFile
-  @OutputFile File jsonFile
+class LicenseReportTask2 extends DefaultTask {
+  public final static POM_CONFIGURATION = "poms"
+  public final static TEMP_POM_CONFIGURATION = "tempPoms"
+  public final static ANDROID_SUPPORT_GROUP_ID = "com.android.support"
+  public final static APACHE_LICENSE_NAME = "The Apache Software License"
+  public final static APACHE_LICENSE_URL = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+  public final static OPEN_SOURCE_LICENSES = "open_source_licenses"
+  public final static HTML_EXT = ".html"
+  public final static JSON_EXT = ".json"
+  @Internal public final List<Project> projects = []
+  @Optional @Input public List<File> assetDirs = []
+  @Optional @Input public buildType
+  @Optional @Input public applicationVariant
+  @Optional @Internal public productFlavors = []
+  @OutputFile public File htmlFile
+  @OutputFile public File jsonFile
 
   @SuppressWarnings("GroovyUnusedDeclaration") @TaskAction licenseReport() {
     setupEnvironment()
@@ -69,7 +67,7 @@ class LicenseReportTask extends DefaultTask {
     if (project.configurations.find { it.name == "implementation" }) configurations << project.configurations."implementation"
 
     // If Android project, add extra configurations
-    if (variant) {
+    if (applicationVariant) {
       // Add buildType configurations
       if (project.configurations.find { it.name == "compile" }) configurations << project.configurations."${buildType}Compile"
       if (project.configurations.find { it.name == "api" }) configurations << project.configurations."${buildType}Api"
@@ -78,7 +76,7 @@ class LicenseReportTask extends DefaultTask {
       // Add productFlavors configurations
       productFlavors.each { flavor ->
         // Works for productFlavors and productFlavors with dimensions
-        if (variant.capitalize().contains(flavor.name.capitalize())) {
+        if (applicationVariant.capitalize().contains(flavor.name.capitalize())) {
           if (project.configurations.find { it.name == "compile" }) configurations << project.configurations."${flavor.name}Compile"
           if (project.configurations.find { it.name == "api" }) configurations << project.configurations."${flavor.name}Api"
           if (project.configurations.find { it.name == "implementation" }) configurations << project.configurations."${flavor.name}Implementation"
@@ -239,7 +237,7 @@ class LicenseReportTask extends DefaultTask {
     }
 
     // If Android project, copy to asset directory
-    if (variant) {
+    if (applicationVariant) {
       // Iterate through all asset directories
       assetDirs.each { directory ->
         final licenseFile = new File(directory.path, OPEN_SOURCE_LICENSES + HTML_EXT)

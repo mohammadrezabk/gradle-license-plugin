@@ -56,13 +56,13 @@ final class HtmlReportSpec extends Specification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#120016'>name</a>
+        <a href='#104700996'>name</a>
       </li>
       <li>
-        <a href='#120016'>name</a>
+        <a href='#104700996'>name</a>
       </li>
     </ul>
-    <a name='120016' />
+    <a name='104700996' />
     <h3>name</h3>
     <pre>name, url</pre>
   </body>

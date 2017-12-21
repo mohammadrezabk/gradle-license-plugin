@@ -136,13 +136,13 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#1288288048'>Appcompat-v7</a>
+        <a href='#1225016516'>Appcompat-v7</a>
       </li>
       <li>
-        <a href='#1288288048'>Design</a>
+        <a href='#1225016516'>Design</a>
       </li>
     </ul>
-    <a name='1288288048' />
+    <a name='1225016516' />
     <h3>The Apache Software License</h3>
     <pre>The Apache Software License, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
   </body>
@@ -154,17 +154,11 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
 [
     {
         "project": "Appcompat-v7",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Design",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }
@@ -220,13 +214,13 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#1288288048'>Appcompat-v7</a>
+        <a href='#1225016516'>Appcompat-v7</a>
       </li>
       <li>
-        <a href='#1288288048'>Design</a>
+        <a href='#1225016516'>Design</a>
       </li>
     </ul>
-    <a name='1288288048' />
+    <a name='1225016516' />
     <h3>The Apache Software License</h3>
     <pre>The Apache Software License, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
   </body>
@@ -238,17 +232,11 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
 [
     {
         "project": "Appcompat-v7",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Design",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }
@@ -318,19 +306,19 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#1288288048'>Appcompat-v7</a>
+        <a href='#1225016516'>Appcompat-v7</a>
       </li>
       <li>
-        <a href='#1288288048'>Design</a>
+        <a href='#1225016516'>Design</a>
       </li>
       <li>
-        <a href='#1288288048'>Support-annotations</a>
+        <a href='#1225016516'>Support-annotations</a>
       </li>
       <li>
-        <a href='#1288288048'>Support-v4</a>
+        <a href='#1225016516'>Support-v4</a>
       </li>
     </ul>
-    <a name='1288288048' />
+    <a name='1225016516' />
     <h3>The Apache Software License</h3>
     <pre>The Apache Software License, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
   </body>
@@ -342,33 +330,21 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
 [
     {
         "project": "Appcompat-v7",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Design",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Support-annotations",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Support-v4",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }
@@ -420,18 +396,18 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#-989311426'>Android GIF Drawable Library</a>
+        <a href='#-449794253'>Android GIF Drawable Library</a>
       </li>
       <li>
-        <a href='#1288288048'>Design</a>
+        <a href='#1225016516'>Design</a>
       </li>
     </ul>
-    <a name='-989311426' />
-    <h3>The MIT License</h3>
-    <pre>The MIT License, http://opensource.org/licenses/MIT</pre>
-    <a name='1288288048' />
+    <a name='1225016516' />
     <h3>The Apache Software License</h3>
     <pre>The Apache Software License, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
+    <a name='-449794253' />
+    <h3>The MIT License</h3>
+    <pre>The MIT License, http://opensource.org/licenses/MIT</pre>
   </body>
 </html>
 """.trim()
@@ -443,15 +419,11 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
         "project": "Android GIF Drawable Library",
         "developers": "Karol Wr\\u00c3\\u00b3tniak",
         "url": "https://github.com/koral--/android-gif-drawable.git",
-        "year": null,
         "license": "The MIT License",
         "license_url": "http://opensource.org/licenses/MIT"
     },
     {
         "project": "Design",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }
@@ -498,13 +470,13 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#1288288048'>Appcompat-v7</a>
+        <a href='#1225016516'>Appcompat-v7</a>
       </li>
       <li>
-        <a href='#1288288048'>Design</a>
+        <a href='#1225016516'>Design</a>
       </li>
     </ul>
-    <a name='1288288048' />
+    <a name='1225016516' />
     <h3>The Apache Software License</h3>
     <pre>The Apache Software License, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
   </body>
@@ -516,17 +488,11 @@ final class LicenseReportTaskAndroidSpec extends BaseAndroidSpecification {
 [
     {
         "project": "Appcompat-v7",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Design",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }

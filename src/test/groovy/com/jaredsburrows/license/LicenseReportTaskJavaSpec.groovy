@@ -75,13 +75,13 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#1288288048'>Appcompat-v7</a>
+        <a href='#1225016516'>Appcompat-v7</a>
       </li>
       <li>
-        <a href='#1288288048'>Design</a>
+        <a href='#1225016516'>Design</a>
       </li>
     </ul>
-    <a name='1288288048' />
+    <a name='1225016516' />
     <h3>The Apache Software License</h3>
     <pre>The Apache Software License, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
   </body>
@@ -93,17 +93,11 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
 [
     {
         "project": "Appcompat-v7",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Design",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }
@@ -186,13 +180,13 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#1288288048'>Appcompat-v7</a>
+        <a href='#1225016516'>Appcompat-v7</a>
       </li>
       <li>
-        <a href='#1288288048'>Design</a>
+        <a href='#1225016516'>Design</a>
       </li>
     </ul>
-    <a name='1288288048' />
+    <a name='1225016516' />
     <h3>The Apache Software License</h3>
     <pre>The Apache Software License, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
   </body>
@@ -204,17 +198,11 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
 [
     {
         "project": "Appcompat-v7",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     },
     {
         "project": "Design",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "The Apache Software License",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }
@@ -291,10 +279,10 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#755502249'>Fake dependency name</a>
+        <a href='#1519480499'>Fake dependency name</a>
       </li>
     </ul>
-    <a name='755502249' />
+    <a name='1519480499' />
     <h3>Some license</h3>
     <pre>Some license, http://website.tld/</pre>
   </body>
@@ -345,10 +333,10 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#755502249'>Fake dependency name</a>
+        <a href='#1519480499'>Fake dependency name</a>
       </li>
     </ul>
-    <a name='755502249' />
+    <a name='1519480499' />
     <h3>Some license</h3>
     <pre>Some license, http://website.tld/</pre>
   </body>
@@ -400,16 +388,16 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
     <h3>Notice for libraries:</h3>
     <ul>
       <li>
-        <a href='#755502249'>Fake dependency name</a>
+        <a href='#1519480499'>Fake dependency name</a>
       </li>
       <li>
-        <a href='#1288288048'>Retrofit</a>
+        <a href='#-2135238579'>Retrofit</a>
       </li>
     </ul>
-    <a name='755502249' />
+    <a name='1519480499' />
     <h3>Some license</h3>
     <pre>Some license, http://website.tld/</pre>
-    <a name='1288288048' />
+    <a name='-2135238579' />
     <h3>Apache 2.0</h3>
     <pre>Apache 2.0, http://www.apache.org/licenses/LICENSE-2.0.txt</pre>
   </body>
@@ -429,9 +417,6 @@ final class LicenseReportTaskJavaSpec extends BaseJavaSpecification {
     },
     {
         "project": "Retrofit",
-        "developers": null,
-        "url": null,
-        "year": null,
         "license": "Apache 2.0",
         "license_url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
     }

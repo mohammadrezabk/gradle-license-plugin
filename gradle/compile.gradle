@@ -34,6 +34,13 @@ compileGroovy {
   }
 }
 
+compileKotlin {
+  kotlinOptions {
+    jvmTarget = rootProject.ext.javaVersion
+//    allWarningsAsErrors = true
+  }
+}
+
 test {
   // Turn on logging for all tests, filter to show failures/skips only
   testLogging {
@@ -57,7 +64,7 @@ javadoc {
     linkSource true
     author = true
     links("http://docs.oracle.com/javase/8/docs/api/",
-            "http://docs.oracle.com/javaee/7/api/")
+      "http://docs.oracle.com/javaee/7/api/")
     exclude "**/*Test.java"
     if (JavaVersion.current().isJava8Compatible()) addStringOption("Xdoclint:none", "-quiet")
   }
@@ -67,9 +74,13 @@ groovydoc {
   docTitle = "${project.name} ${project.version}"
   header = project.name
   link("http://docs.oracle.com/javase/8/docs/api/",
-          "http://docs.oracle.com/javaee/7/api/",
-          "http://groovy.codehaus.org/gapi/")
+    "http://docs.oracle.com/javaee/7/api/",
+    "http://groovy.codehaus.org/gapi/")
   exclude "**/*Spec.java"
+}
+
+dokka {
+  moduleName = "${project.name} ${project.version}"
 }
 
 // Prevent forked processes from stealing focus (on MacOS at least)
