@@ -1,6 +1,7 @@
 package com.jaredsburrows.license
 
 import com.android.builder.model.ProductFlavor
+import com.jaredsburrows.license.internal.pom.Developer
 import com.jaredsburrows.license.internal.pom.License
 import com.jaredsburrows.license.internal.pom.Project
 import com.jaredsburrows.license.internal.report.HtmlReport
@@ -140,7 +141,67 @@ abstract class LicenseReportTaskKt : DefaultTask() {
     }
   }
 
-  protected abstract fun generatePOMInfo()
+  /**
+   * Get POM information from the dependency artifacts.
+   */
+  private fun generatePOMInfo() {
+    // Iterate through all POMs in order from our custom POM configuration
+    project
+      .configurations
+      .getByName(POM_CONFIGURATION)
+      .resolvedConfiguration
+      .lenientConfiguration
+      .artifacts.forEach { resolvedArtifact ->
+
+      val pomFile = resolvedArtifact.file
+      val node = xmlParser.parse(pomFile)
+
+      // License information
+      val name = getName(node).trim()
+      var version = node.getAt("version").text().trim()
+      val description = node.getAt("description").text().trim()
+      val developers = arrayListOf<Developer>()
+      if (node.getAt("developers").isNotEmpty()) {
+        node.getAt("developers").getAt("developer").forEach { developer ->
+          developers.add(Developer().apply {
+            this.name = (developer as Node).getAt("name").text().trim()
+          })
+        }
+      }
+
+      val url = node.getAt("url").text().trim()
+      val inceptionYear = node.getAt("inceptionYear").text().trim()
+
+      // Search for licenses
+      var licenses = findLicenses(pomFile)
+      if (licenses.isEmpty()) {
+        logger.log(LogLevel.WARN, "$name dependency does not have a license.")
+        licenses = arrayListOf()
+      }
+
+      // Search for version
+      if (version.isEmpty()) {
+        version = findVersion(pomFile)
+      }
+
+      // Store the information that we need
+      val module = resolvedArtifact.moduleVersion.id
+      val project = Project().apply {
+        this.name = name
+        this.description = description
+        this.version = version
+        this.developers = developers
+        this.url = url
+        this.year = inceptionYear
+        this.gav = "${module.group}:${module.name}:${module.version}"
+      }
+
+      projects.add(project)
+    }
+
+    // Sort POM information by name
+    projects.sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.name!! })
+  }
 
   /**
    * Setup configurations to collect dependencies.
@@ -165,7 +226,7 @@ abstract class LicenseReportTaskKt : DefaultTask() {
   /**
    * Use Parent POM information when individual dependency license information is missing.
    */
-  protected open fun getParentPomFile(node: Node?): File? {
+  private fun getParentPomFile(node: Node?): File? {
     // Get parent POM information
     val parent = node?.getAt("parent")
     val groupId = parent?.getAt("groupId")?.text().orEmpty()
@@ -274,7 +335,7 @@ abstract class LicenseReportTaskKt : DefaultTask() {
     }
   }
 
-  protected fun isUrlValid(licenseUrl: String): Boolean {
+  private fun isUrlValid(licenseUrl: String): Boolean {
     var url: URL? = null
     try {
       url = URL(licenseUrl)
@@ -284,7 +345,7 @@ abstract class LicenseReportTaskKt : DefaultTask() {
     return url != null
   }
 
-  protected fun findVersion(pomFile: File?): String {
+  private fun findVersion(pomFile: File?): String {
     if (pomFile.isNullOrEmpty()) {
       return ""
     }
@@ -307,7 +368,7 @@ abstract class LicenseReportTaskKt : DefaultTask() {
     return ""
   }
 
-  protected fun findLicenses(pomFile: File?): List<License> {
+  private fun findLicenses(pomFile: File?): List<License> {
     if (pomFile.isNullOrEmpty()) {
       return arrayListOf()
     }
@@ -345,7 +406,7 @@ abstract class LicenseReportTaskKt : DefaultTask() {
     return arrayListOf()
   }
 
-  protected fun getName(node: Node): String {
+  private fun getName(node: Node): String {
     return if (node.getAt("name").text().isNotEmpty()) {
       node.getAt("name").text()
     } else {
